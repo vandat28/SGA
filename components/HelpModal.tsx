@@ -26,25 +26,53 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div className="p-6 space-y-4 text-slate-600 prose prose-slate max-w-none">
-          <p>Chào mừng bạn đến với Trợ lý Soạn Giáo Án AI! Dưới đây là các bước để tạo một giáo án hoàn chỉnh:</p>
+          <p>Chào mừng bạn đến với <strong>Trợ lý Soạn Giáo Án AI</strong>! Công cụ này được thiết kế để giúp bạn tạo giáo án chất lượng cao một cách nhanh chóng và hiệu quả.</p>
+          
+          <h3 className="!text-lg !font-semibold !text-slate-800 !mt-6 !mb-2">Quy trình 3 bước đơn giản</h3>
           <ol>
             <li>
-              <strong>Điền thông tin bài giảng:</strong> Cung cấp các thông tin cơ bản như Tên giáo viên, Tên bài dạy, Môn học, Lớp, và các tùy chọn khác. AI có thể tự suy luận Môn học, Lớp, và Tên bài dạy nếu bạn để trống.
+              <strong>Cung cấp thông tin:</strong>
+              <ul className="!mt-1 !mb-3">
+                <li>Điền các thông tin cơ bản về bài dạy. AI có thể tự suy luận một số mục nếu để trống.</li>
+                <li>Chọn số tiết và thời lượng sẽ được tự động tính toán theo quy định.</li>
+                <li>Tùy chọn, bạn có thể tải lên mẫu giáo án riêng (.docx, .pdf, .txt...) để AI điền vào.</li>
+              </ul>
             </li>
             <li>
-              <strong>Tải lên Sách giáo khoa:</strong> Nhấn vào khu vực tải lên để chọn hoặc kéo thả file ảnh (JPG, PNG) hoặc PDF của trang sách giáo khoa cần soạn. Bạn có thể tải lên nhiều tệp.
+              <strong>Tải lên Sách giáo khoa:</strong>
+              <ul className="!mt-1 !mb-3">
+                  <li>Nhấn vào khu vực tải lên để chọn hoặc kéo thả file ảnh (JPG, PNG) hoặc PDF của trang sách giáo khoa.</li>
+                  <li>Bạn có thể tải lên nhiều tệp để cung cấp đầy đủ ngữ cảnh cho AI.</li>
+              </ul>
             </li>
             <li>
-              <strong>(Tùy chọn) Sử dụng Mẫu riêng:</strong> Nếu bạn có một mẫu giáo án riêng, hãy tích vào ô "Sử dụng mẫu của riêng bạn" và tải lên tệp mẫu (.txt, .md, .pdf, .docx). AI sẽ điền nội dung vào đúng mẫu này.
-            </li>
-            <li>
-              <strong>Tạo Giáo Án:</strong> Sau khi đã cung cấp đủ thông tin, nhấn vào nút "✨ Tạo Giáo Án". AI sẽ bắt đầu phân tích và soạn thảo.
-            </li>
-            <li>
-              <strong>Nhận kết quả:</strong> Chờ trong giây lát, giáo án hoàn chỉnh sẽ xuất hiện ở khung bên phải. Bạn có thể xem lại, sao chép nội dung hoặc in trực tiếp.
+              <strong>Tạo và Tinh chỉnh:</strong>
+              <ul className="!mt-1 !mb-3">
+                  <li>Nhấn nút <strong>"✨ Tạo Giáo Án"</strong>.</li>
+                  <li>Giáo án sẽ xuất hiện ở khung bên phải. Đừng dừng lại ở đó! Hãy sử dụng hộp chat bên dưới để yêu cầu AI tinh chỉnh thêm (ví dụ: <i>"thêm 3 câu hỏi trắc nghiệm"</i>, <i>"rút gọn hoạt động 2"</i>).</li>
+              </ul>
             </li>
           </ol>
-          <p className="text-sm text-indigo-600 bg-indigo-50 p-3 rounded-lg"><strong>Mẹo:</strong> Cung cấp hình ảnh SGK càng rõ nét và đầy đủ, chất lượng giáo án do AI tạo ra sẽ càng cao!</p>
+
+          <h3 className="!text-lg !font-semibold !text-slate-800 !mt-6 !mb-2">Các tính năng hữu ích khác</h3>
+            <ul className="!list-none !pl-0">
+                <li className="flex items-start">
+                    <span className="mr-3 text-indigo-500 pt-1">✏️</span>
+                    <div><strong>Chỉnh sửa trực tiếp:</strong> Nhấn nút "Chỉnh sửa" để sửa đổi nội dung giáo án trực tiếp trên trang.</div>
+                </li>
+                <li className="flex items-start mt-2">
+                    <span className="mr-3 text-indigo-500 pt-1">📋</span>
+                    <div><strong>Sao chép &amp; In ấn:</strong> Dễ dàng sao chép toàn bộ nội dung hoặc in giáo án ra giấy với định dạng chuẩn.</div>
+                </li>
+                <li className="flex items-start mt-2">
+                    <span className="mr-3 text-indigo-500 pt-1">🕒</span>
+                    <div><strong>Lịch sử soạn thảo:</strong> Xem lại, khôi phục hoặc xóa các giáo án đã tạo trước đây từ thanh lịch sử.</div>
+                </li>
+            </ul>
+
+          <p className="text-sm text-indigo-600 bg-indigo-50 p-3 rounded-lg !mt-6">
+            <strong>Mẹo:</strong> Cung cấp hình ảnh SGK rõ nét và ghi chú cụ thể sẽ giúp AI tạo ra giáo án chất lượng và sát với yêu cầu của bạn nhất!
+          </p>
         </div>
         <div className="p-4 bg-slate-50 border-t border-slate-200 text-right rounded-b-xl">
             <button onClick={onClose} className="px-5 py-2 text-sm font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">

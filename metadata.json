@@ -1,5 +1,5 @@
 {
-  "name": "Copy of Trợ Lý Giáo Án AI",
+  "name": "Trợ Lý Giáo Án AI",
   "description": "Một ứng dụng web giúp giáo viên tạo kế hoạch bài dạy (giáo án) chuẩn theo các công văn của Bộ GD&ĐT Việt Nam từ hình ảnh sách giáo khoa, sử dụng công nghệ AI của Gemini.",
   "requestFramePermissions": []
 }

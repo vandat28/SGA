@@ -75,7 +75,7 @@ export const LessonPlanDisplay: React.FC<LessonPlanDisplayProps> = ({
     if (printWindow && contentRef.current) {
         printWindow.document.write('<html><head><title>In Giáo Án</title>');
         printWindow.document.write('<script src="https://cdn.tailwindcss.com"></script>');
-        printWindow.document.write('<style> @page { size: A4; margin: 1in; } body { font-family: sans-serif; } .prose { max-width: 100% !important; } </style>');
+        printWindow.document.write('<style> @page { size: A4; margin: 1in; } body { font-family: sans-serif; } .prose { max-width: 100% !important; } .prose table { border-collapse: collapse; width: 100%; } .prose th, .prose td { border: 1px solid #ccc; padding: 8px; } </style>');
         printWindow.document.write('</head><body class="p-4">');
         printWindow.document.write(`<div class="prose prose-sm max-w-none">${contentRef.current.innerHTML}</div>`);
         printWindow.document.write('</body></html>');
@@ -176,6 +176,35 @@ export const LessonPlanDisplay: React.FC<LessonPlanDisplayProps> = ({
           50% {
             opacity: 0;
           }
+        }
+        /* Cải thiện hiển thị bảng cho dễ nhìn hơn */
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+            font-size: 0.95em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .prose th, .prose td {
+            border: 1px solid #e2e8f0; /* slate-200 */
+            padding: 0.75rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .prose thead {
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .prose thead th {
+            font-weight: 600;
+            color: #334155; /* slate-700 */
+            border-bottom: 2px solid #cbd5e1; /* slate-300 */
+        }
+        .prose table p:first-child {
+            margin-top: 0;
+        }
+        .prose table p:last-child {
+            margin-bottom: 0;
         }
       `}</style>
       <div ref={scrollContainerRef} className="flex-grow overflow-y-auto p-6">
